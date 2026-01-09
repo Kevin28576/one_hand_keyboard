@@ -44,7 +44,7 @@ uint8_t keymaps[4][56] = {
     KEY_ESC,          KEY_6,            KEY_7,            KEY_8,            KEY_9,            KEY_0,            KEY_COMMA,        KEY_PERIOD,
     KEY_CAPS_LOCK,    KEY_1,            KEY_2,            KEY_3,            KEY_4,            KEY_5,            KEY_SLASH,        KEY_QUOTE,
     KEY_TAB,          KEY_Y,            KEY_Q,            KEY_W,            KEY_E,            KEY_R,            KEY_T,            KEY_BACKSPACE,
-    KEY_LEFT_SHIFT,   KEY_H,            KEY_A,            KEY_S,            0x07,            KEY_F,            KEY_G,            KEY_ENTER,
+    KEY_LEFT_SHIFT,   KEY_H,            KEY_A,            KEY_S,            0x07,             KEY_F,            KEY_G,            KEY_ENTER,
     0,                KEY_Z,            KEY_X,            KEY_C,            KEY_V,            KEY_LEFT_ALT,     KEY_LEFT_CTRL,    1,
     KEY_LEFT,         KEY_RIGHT,        KEY_SPACE,        0,                0,                0,                0,                0
   },                  
