@@ -36,7 +36,7 @@
 ## HID 狀態監控 App
 
 電腦端 App 會顯示目前層級與使用統計，並提供熱度圖、匯出功能等。
-詳見 `docs/APP.md`。
+詳見 [docs/APP.md](/docs/APP.md)。
 
 ## 編譯與上傳
 
