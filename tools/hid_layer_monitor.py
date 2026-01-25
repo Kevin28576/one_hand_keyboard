@@ -339,7 +339,22 @@ class HIDLayerMonitorApp:
         ttk.Button(
             action_frame, text="最小化到托盤", command=self._minimize_to_tray
         ).grid(row=0, column=7)
-
+        exit_btn = tk.Button(
+            action_frame,
+            text="退出",
+            command=self._exit_app,
+            font=("Microsoft JhengHei", 11, "bold"),
+            bg="#d32f2f",
+            fg="white",
+            activebackground="#b71c1c",
+            activeforeground="white",
+            relief="raised",
+            padx=14,
+            pady=6,
+        )
+        exit_btn.grid(row=0, column=8, padx=(10, 0))
+        exit_btn.grid(row=0, column=8, padx=(10, 0))
+        
         self.status = ttk.Label(frame, text="狀態：未連線", style="Label.TLabel")
         self.status.grid(row=row + 1, column=0, columnspan=4, sticky="w", pady=(8, 0))
 
@@ -903,12 +918,31 @@ class HIDLayerMonitorApp:
                 label.config(text="-")
 
         self.root.after(100, self.update_ui)
+    def _exit_app(self):
+        # 正式退出：先停記錄、斷線、再關窗
+        try:
+            if self.logging_enabled:
+                self._stop_logging()
+        except Exception:
+            pass
+
+        try:
+            self.disconnect()
+        except Exception:
+            pass
+
+        try:
+            self.root.quit()
+        except Exception:
+            pass
+
+        self.root.destroy()
 
 
 def main():
     root = tk.Tk()
     app = HIDLayerMonitorApp(root)
-    root.protocol("WM_DELETE_WINDOW", app.disconnect)
+    root.protocol("WM_DELETE_WINDOW", app._exit_app)
     root.mainloop()
 
 
