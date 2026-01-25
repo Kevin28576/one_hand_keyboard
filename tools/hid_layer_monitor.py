@@ -7,6 +7,7 @@ from tkinter import filedialog
 from collections import deque
 from datetime import datetime
 from pathlib import Path
+import os
 import json
 
 BACKEND = None
@@ -33,8 +34,9 @@ if BACKEND is None:
 REPORT_ID_GAMEPAD = 6
 USAGE_PAGE_GENERIC_DESKTOP = 0x01
 USAGE_JOYSTICK = 0x04
-SETTINGS_PATH = Path("tools/monitor_settings.json")
-LOG_DIR = Path("tools/logs")
+APP_DIR = Path(os.getenv("APPDATA", ".")) / "OneHandKeyboard"
+SETTINGS_PATH = APP_DIR / "monitor_settings.json"
+LOG_DIR = APP_DIR / "logs"
 
 KEYMAPS = [
     [
