@@ -236,6 +236,25 @@ void loop() {
             }
             //其他按鍵
             else {
+              // Y 鍵（送出 WIN+H）
+              if (currentLayer == 1 && keyID == KEY_Y)  
+              {
+                switch (kpd.key[i].kstate) {
+                  case PRESSED:                  
+                    Keyboard.press((KeyboardKeycode)KEY_LEFT_GUI);
+                    Keyboard.press((KeyboardKeycode)KEY_H);
+                    break;
+                    
+                  case RELEASED:
+                    Keyboard.release((KeyboardKeycode)KEY_LEFT_GUI);
+                    Keyboard.release((KeyboardKeycode)KEY_H);
+                    break;
+                  case IDLE:
+                    break;
+                  case HOLD:
+                    break;
+                }
+              }
               //FN+Ctrl（送出 WIN+SPACE）
               if (currentLayer == 1 && keyID == CTRL_KEY_ID)  
               {
