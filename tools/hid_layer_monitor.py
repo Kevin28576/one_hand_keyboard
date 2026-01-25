@@ -77,6 +77,13 @@ KEYMAPS = [
     ],
 ]
 
+LAYER_NAMES_ZH = {
+    0: "一般層",
+    1: "一般層（FN）",
+    2: "注音層",
+    3: "注音層（FN）",
+}
+
 SPECIAL_KEY_LABELS = {
     40: "FN",
     47: "LAYER",
@@ -353,8 +360,7 @@ class HIDLayerMonitorApp:
             pady=6,
         )
         exit_btn.grid(row=0, column=8, padx=(10, 0))
-        exit_btn.grid(row=0, column=8, padx=(10, 0))
-        
+
         self.status = ttk.Label(frame, text="狀態：未連線", style="Label.TLabel")
         self.status.grid(row=row + 1, column=0, columnspan=4, sticky="w", pady=(8, 0))
 
@@ -793,9 +799,11 @@ class HIDLayerMonitorApp:
         except Exception:
             pass
 
+        layer_name = LAYER_NAMES_ZH.get(layer, f"{layer}")
+
         label = tk.Label(
             toast,
-            text=f"目前層：Layer {layer}",
+            text=f"目前層：{layer}",
             font=("Microsoft JhengHei", 14, "bold"),
             bg="#1f1f1f",
             fg="#f0f0f0",
