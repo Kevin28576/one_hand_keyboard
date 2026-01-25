@@ -803,7 +803,7 @@ class HIDLayerMonitorApp:
 
         label = tk.Label(
             toast,
-            text=f"目前層：{layer}",
+            text=f"目前層：{layer_name}",
             font=("Microsoft JhengHei", 14, "bold"),
             bg="#1f1f1f",
             fg="#f0f0f0",
