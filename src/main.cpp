@@ -39,7 +39,7 @@ Bounce middleButton = Bounce();
 //鍵位表定義
 //鍵位表定義
 uint8_t keymaps[4][56] = {
-// Layer 0：一般層（非 FN）
+// Layer 0：英文層（非 FN）
   { 0,                KEY_TILDE,        KEY_LEFT_BRACE,   KEY_RIGHT_BRACE,  KEY_MINUS,        KEY_EQUAL,        KEY_SEMICOLON,    KEY_BACKSLASH,
     KEY_ESC,          KEY_6,            KEY_7,            KEY_8,            KEY_9,            KEY_0,            KEY_COMMA,        KEY_PERIOD,
     KEY_CAPS_LOCK,    KEY_1,            KEY_2,            KEY_3,            KEY_4,            KEY_5,            KEY_SLASH,        KEY_QUOTE,
@@ -49,7 +49,7 @@ uint8_t keymaps[4][56] = {
     KEY_LEFT,         KEY_RIGHT,        KEY_SPACE,        0,                0,                0,                0,                0
   },                  
   
-// Layer 1：一般層（FN）
+// Layer 1：英文層（FN）
   { 0,                0,                0,                0,                0,                0,                0,                0,
     KEY_LEFT_WINDOWS, KEY_F7,           KEY_F8,           KEY_F9,           KEY_F10,          KEY_F11,          KEY_F12,          0,
     KEY_CAPS_LOCK,    KEY_F1,           KEY_F2,           KEY_F3,           KEY_F4,           KEY_F5,           KEY_F6,           0,
@@ -166,7 +166,7 @@ void loop() {
             fnPressCount++;
           }
         }
-        // Layer 0：一般層（非 FN）
+        // Layer 0：英文層（非 FN）
         if (keyID == LAYER_KEY_ID) {
           switch (kpd.key[i].kstate) {
             case PRESSED:
@@ -210,7 +210,7 @@ void loop() {
                 continue;
                 }
 
-// 一般層-----------------------------------------------------------------------
+// 英文層-----------------------------------------------------------------------
           if (currentLayer == 0 || currentLayer == 1) 
           {
             //FN 鍵

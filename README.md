@@ -23,8 +23,8 @@
 
 ## 層級（Layer）設計與切換規則
 
-- Layer 0：一般層
-- Layer 1：一般層 FN（按住 FN 暫時進入）
+- Layer 0：英文層
+- Layer 1：英文層 FN（按住 FN 暫時進入）
 - Layer 2：注音層
 - Layer 3：注音層 FN（按住 FN 暫時進入）
 

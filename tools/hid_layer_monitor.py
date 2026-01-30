@@ -12,7 +12,7 @@ import json
 
 BACKEND = None
 try:
-    import hid
+    import hid # type: ignore
 
     BACKEND = "hidapi"
 except Exception:
@@ -20,7 +20,7 @@ except Exception:
 
 if BACKEND is None:
     try:
-        import pywinusb.hid as win_hid
+        import pywinusb.hid as win_hid # type: ignore
 
         BACKEND = "pywinusb"
     except Exception as exc:
@@ -514,7 +514,7 @@ class HIDLayerMonitorApp:
 
     def _export_excel(self):
         try:
-            import openpyxl
+            import openpyxl # type: ignore
         except Exception:
             self.status.config(text="狀態：匯出 Excel 需安裝 openpyxl")
             return
@@ -667,7 +667,7 @@ class HIDLayerMonitorApp:
 
     def _minimize_to_tray(self):
         try:
-            import pystray
+            import pystray # type: ignore
             from PIL import Image, ImageDraw
         except Exception:
             self.status.config(text="狀態：托盤功能需要 pystray 與 Pillow")
